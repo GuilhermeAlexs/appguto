@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fatura.view.MainActivity" >
+
+    <ListView
+        android:id="@+id/main_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:divider="@android:color/transparent"
+		android:dividerHeight="@dimen/activity_horizontal_margin" >
+    </ListView>
+    
+    
+<!--     <Button -->
+<!--         android:id="@+id/main_btnFatura" -->
+<!--         style="@style/ButtonText" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_marginTop="41dp" -->
+<!--         android:background="@drawable/button" -->
+<!--         android:drawableLeft="@drawable/fatura64" -->
+<!--         android:drawablePadding="25dp" -->
+<!--         android:text="Minha Fatura" /> -->
+
+<!--     <Button -->
+<!--         android:id="@+id/main_btnPotencia" -->
+<!--         style="@style/ButtonText" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_marginTop="138dp" -->
+<!--         android:background="@drawable/button" -->
+<!--         android:drawableLeft="@drawable/wifi64" -->
+<!--         android:drawablePadding="15dp" -->
+<!--         android:text="Mapa de Potência" /> -->
+
+<!--     <Button -->
+<!--         android:id="@+id/main_btnConfig" -->
+<!--         style="@style/ButtonText" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_marginTop="138dp" -->
+<!--         android:background="@drawable/button" -->
+<!--         android:drawableLeft="@drawable/settings64" -->
+<!--         android:drawablePadding="25dp" -->
+<!--         android:text="Configuração" /> -->
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_item_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card"
+    android:orientation="horizontal"
+     >
+    
+	<ImageView
+        android:id="@+id/image_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/fatura64" />
+	
+	<TextView
+        android:id="@+id/item_name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@id/image_icon"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:text="Minha Fatura" />
+	
+	<TextView 
+	    android:id="@+id/item_description"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_toRightOf="@id/image_icon"
+        android:layout_below="@id/item_name"
+        android:layout_marginLeft="20dp"
+	    android:textColor="#63625F"
+	    android:textStyle="italic"
+	    android:layout_marginRight="10dp"
+	    android:text="Descrição Teste"/>
+	
+</RelativeLayout>
