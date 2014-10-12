@@ -1,9 +1,0 @@
-# cache for current jar dependency. DO NOT EDIT.
-# format is <lastModified> <length> <SHA-1> <path>
-# Encoding is UTF-8
-1403554640000 351603 aaa3ec7d7bfb3446a9190c5b1f601f1eb94745e7 C:\Users\GuilhermeP\workspace\Fatura\libs\android-support-v7-appcompat.jar
-1403554640000 351603 aaa3ec7d7bfb3446a9190c5b1f601f1eb94745e7 C:\Users\GuilhermeP\workspace\appcompat_v7\libs\android-support-v7-appcompat.jar
-1406730388789 294232 00b3081e1074bf380cc1d09d6ef4f8e5415311f2 C:\Users\GuilhermeP\workspace\appcompat_v7\libs\ormlite-core-4.48.jar
-1406730388789 294232 00b3081e1074bf380cc1d09d6ef4f8e5415311f2 C:\Users\GuilhermeP\workspace\Fatura\libs\ormlite-core-4.48.jar
-1406730388786 56570 9e45246f4a068cad94e03f34bf8f24358279a7f7 C:\Users\GuilhermeP\workspace\Fatura\libs\ormlite-android-4.48.jar
-1406730388786 56570 9e45246f4a068cad94e03f34bf8f24358279a7f7 C:\Users\GuilhermeP\workspace\appcompat_v7\libs\ormlite-android-4.48.jar

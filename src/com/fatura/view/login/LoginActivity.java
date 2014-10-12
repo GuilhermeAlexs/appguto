@@ -13,7 +13,9 @@ import com.fatura.view.MainActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
@@ -36,10 +39,14 @@ public class LoginActivity extends Activity {
 	private String mPhone, mCarrier, mPaymentDay;
 
 	// UI references.
-	private EditText mEmailView, mPhoneView, mNameView, mPaymentDayView;
-	private Spinner mCarrierView;
+	private EditText mEmailView, mPhoneView, mNameView;
+	private Spinner mCarrierView, mPaymentDayView;
 	private Button mButtonView;
-
+	
+	// Adapters
+	private HintAdapter carrierAdapter;
+	private HintAdapter paymentDayAdapter;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -58,26 +65,45 @@ public class LoginActivity extends Activity {
 		mEmailView = (EditText) findViewById(R.id.email);
 		mNameView = (EditText) findViewById(R.id.name);
 		mPhoneView = (EditText) findViewById(R.id.phone);
-		mCarrierView = (Spinner) findViewById(R.id.carrier);
-		mPaymentDayView = (EditText) findViewById(R.id.paymentDay);
+		mCarrierView = (Spinner) findViewById(R.id.sp_carrier);
+		mPaymentDayView = (Spinner) findViewById(R.id.sp_payment_day);
 		mButtonView = (Button) findViewById(R.id.sign_in_button);
 
 		mButtonView.setOnClickListener(loginButtonListener);
+		
+		setSpCarrierData();
+		setSpPaymentDayData();
+		
+		// Apply the adapter to the spinner
+		mCarrierView.setAdapter(carrierAdapter);
+		mCarrierView.setSelection(carrierAdapter.getCount());
+		
+		mPaymentDayView.setAdapter(paymentDayAdapter);
+		mPaymentDayView.setSelection(paymentDayAdapter.getCount());
+		
+	}
 
+	private void setSpCarrierData() {
 		ArrayList<String> list = new ArrayList<String>();
+
 		list.add("TIM");
 		list.add("VIVO");
 		list.add("CLARO");
 		list.add("OI");
-
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-		        android.R.layout.simple_spinner_item, list);
-		// Specify the layout to use when the list of choices appears
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
-		mCarrierView.setAdapter(adapter);
-
-		mCarrierView.setSelection(0);
+		list.add("Operadora");
+		
+		carrierAdapter = new HintAdapter(this, list, android.R.layout.simple_spinner_item);
+		carrierAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	}
+	
+	private void setSpPaymentDayData() {
+		ArrayList<String> list = new ArrayList<String>();
+		for (int i = 0; i < 31; i++) {
+			list.add(""+i);
+		}
+		list.add("Dia da Fatura");
+		paymentDayAdapter = new HintAdapter(this, list, android.R.layout.simple_spinner_item);
+		paymentDayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	}
 
 	@Override
@@ -111,7 +137,7 @@ public class LoginActivity extends Activity {
 		mName = mNameView.getText().toString();
 		mPhone = mPhoneView.getText().toString();
 		mCarrier = mCarrierView.getSelectedItem().toString();
-		mPaymentDay = mPaymentDayView.getText().toString();
+		mPaymentDay = mPaymentDayView.getSelectedItem().toString();
 		
 		boolean cancel = false;
 		View focusView = null;
@@ -139,9 +165,21 @@ public class LoginActivity extends Activity {
 			cancel = true;
 		}
 		
-		if(TextUtils.isEmpty(mPaymentDay)) {
-			mPaymentDayView.setError(getString(R.string.error_field_required));
-			focusView = mPaymentDayView;
+		if(!mPhone.matches("(\\+[0-9][0-9])([0-9][0-9])((2|3|8|9)([0-9]{7,8}))")) {
+			mPhoneView.setError(getString(R.string.error_invalid_number));
+			focusView = mPhoneView;
+			cancel = true;
+		}
+		
+		if(mCarrier.equals("Operadora")) {
+			Toast.makeText(this, "Selecione sua operadora", Toast.LENGTH_SHORT).show();
+			focusView = mCarrierView;
+			cancel = true;
+		}
+		
+		if(mPaymentDay.equals("Dia da Fatura")) {
+			Toast.makeText(this, "Selecione o dia da sua fatura", Toast.LENGTH_SHORT).show();
+			focusView = mCarrierView;
 			cancel = true;
 		}
 

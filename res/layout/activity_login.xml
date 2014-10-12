@@ -1,6 +1,7 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.fatura.view.login.LoginActivity" >
+
     <!-- Login form -->
 
     <ScrollView
@@ -10,17 +11,18 @@
 
         <LinearLayout
             style="@style/LoginFormContainer"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:focusable="true" android:focusableInTouchMode="true" >
 
             <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapSentences"
                 android:hint="Nome"
+                android:inputType="textCapSentences"
                 android:maxLines="1"
                 android:singleLine="true" />
-            
+
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
@@ -29,27 +31,36 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true" />
-            
+
             <EditText
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Telefone: +556191769457"
                 android:maxLines="1"
+                android:inputType="phone"
                 android:singleLine="true" />
-           	
-            <Spinner
-			    android:id="@+id/carrier"
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content" />
-            
-            
-            <EditText
-                android:id="@+id/paymentDay"
-                android:layout_width="match_parent"
+
+            <!-- Spinners Layout -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="Dia da fatura" />
-            
+                android:orientation="horizontal" >
+
+                <Spinner
+                    android:id="@+id/sp_carrier"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:prompt="@string/payment_prompt" />
+
+                <Spinner
+                    android:id="@+id/sp_payment_day"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:prompt="@string/payment_prompt" />
+            </LinearLayout>
+
             <Button
                 android:id="@+id/sign_in_button"
                 android:layout_width="wrap_content"
@@ -59,7 +70,6 @@
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
                 android:text="@string/action_sign_in_short" />
-            
         </LinearLayout>
     </ScrollView>
 

@@ -4,5 +4,6 @@
     <string name="app_name">Fatura</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="payment_prompt">Dia da Fatura</string>
 
 </resources>

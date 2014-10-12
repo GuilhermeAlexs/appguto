@@ -1116,7 +1116,6 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
-        public static final int carrier=0x7f050040;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int default_activity_button=0x7f050028;
@@ -1159,7 +1158,6 @@ containing a value of this type.
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
         public static final int pager=0x7f050044;
-        public static final int paymentDay=0x7f050041;
         public static final int phone=0x7f05003f;
         public static final int priceTextView=0x7f050059;
         public static final int priceTextView2=0x7f05005b;
@@ -1184,6 +1182,8 @@ containing a value of this type.
         public static final int showHome=0x7f050004;
         public static final int showTitle=0x7f050006;
         public static final int sign_in_button=0x7f050042;
+        public static final int sp_carrier=0x7f050040;
+        public static final int sp_payment_day=0x7f050041;
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabIcon=0x7f050057;
@@ -1307,22 +1307,24 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
-        public static final int action_forgot_password=0x7f0a0015;
+        public static final int action_forgot_password=0x7f0a0016;
         public static final int action_settings=0x7f0a000f;
-        public static final int action_sign_in_register=0x7f0a0013;
-        public static final int action_sign_in_short=0x7f0a0014;
+        public static final int action_sign_in_register=0x7f0a0014;
+        public static final int action_sign_in_short=0x7f0a0015;
         public static final int app_name=0x7f0a000d;
-        public static final int error_field_required=0x7f0a001a;
-        public static final int error_incorrect_password=0x7f0a0019;
-        public static final int error_invalid_email=0x7f0a0017;
-        public static final int error_invalid_password=0x7f0a0018;
+        public static final int error_field_required=0x7f0a001b;
+        public static final int error_incorrect_password=0x7f0a001a;
+        public static final int error_invalid_email=0x7f0a0018;
+        public static final int error_invalid_number=0x7f0a001c;
+        public static final int error_invalid_password=0x7f0a0019;
         public static final int hello_world=0x7f0a000e;
-        public static final int login_progress_signing_in=0x7f0a0016;
+        public static final int login_progress_signing_in=0x7f0a0017;
+        public static final int payment_prompt=0x7f0a0010;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f0a0011;
-        public static final int prompt_password=0x7f0a0012;
-        public static final int title_activity_login=0x7f0a0010;
+        public static final int prompt_email=0x7f0a0012;
+        public static final int prompt_password=0x7f0a0013;
+        public static final int title_activity_login=0x7f0a0011;
     }
     public static final class style {
         /** 
@@ -2705,7 +2707,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x01010438
+            0x0101012f, 0x01010130, 0x01010131, 0x01010435
         };
         /**
           <p>
